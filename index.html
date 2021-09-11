@@ -69,12 +69,18 @@
                   </div>
                </div>
                <div class="sfondo">
-                  <div v-for="(contact, i) in contacts" class="chat-sx">
+                  <div class="chat-sx">
                      <div class="conversazione-sx clearfix">
                         <div class="modifica">
                            <i class="fas fa-angle-down"></i>
                         </div>
-                        <p> {{contact.messages}} </p>
+                        <p> {{contacts[0].messages[0].message}} </p>
+                     </div>
+                     <div class="conversazione-sx clearfix">
+                        <div class="modifica">
+                           <i class="fas fa-angle-down"></i>
+                        </div>
+                        <p> {{contacts[0].messages[1].message}} </p>
                      </div>
                   </div>
                   <div class="chat-dx">
@@ -85,6 +91,16 @@
                         <!-- <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p>
                         <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p>
                         <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p> -->
+                        <p>Oggi non ho avuto tempo, perchè Vue mi sta facendo sclerare!!!</p>
+                     </div>
+                     <div class="conversazione-dx clearfix">
+                        <div class="modifica">
+                           <i class="fas fa-angle-down"></i>
+                        </div>
+                        <!-- <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p>
+                        <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p>
+                        <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p> -->
+                        <p>Stai sereno con# </p>
                      </div>
                   </div>
                </div>
