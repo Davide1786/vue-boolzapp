@@ -21,7 +21,7 @@
                   <div class="myFoto">
                      <div class="fotoProfilo">
                         <img src="img/avatar_io.jpg" alt="">
-                        </div>
+                     </div>
                         <span class="nomeMio">Davide Napolitano</span>
                      </div>
                      <div class="iconePersonali">
@@ -45,10 +45,10 @@
                   </div>
                   <input class="cerca-persone" type="text" placeholder="Cerca o inzia una nuova chat">
                </div>
-               <div class="contatti">
-                  <div v-for="(contact, i) in contacts" class="lista">
-                     <div class="avatar">
-                        <img :src="'img/avatar' + contact.avatar + '.jpg'" alt="">
+               <div class="lista-contatti">
+                  <div v-for="(contact, i) in contacts" @click="setUtenteCorrente(i)" class="contatti">
+                     <div class="avatar" >
+                        <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> 
                      </div>
                      <span class="nomi"> {{contact.name}} </span>
                   </div>
@@ -58,9 +58,9 @@
                <div class="utenteLive">
                   <div class="foto">
                      <div class="fotoUtente">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img :src="'img/avatar' + contacts[utenteAttivoAttuale].avatar + '.jpg' " alt="">
                      </div>
-                     <span class="nomeLive">Michele</span>
+                     <span class="nomeLive">{{ contacts[utenteAttivoAttuale].name  }}</span>
                   </div>
                   <div class="iconePersonali">
                      <i class="fas fa-search"></i>
@@ -69,39 +69,11 @@
                   </div>
                </div>
                <div class="sfondo">
-                  <div class="chat-sx">
-                     <div class="conversazione-sx clearfix">
-                        <div class="modifica">
-                           <i class="fas fa-angle-down"></i>
-                        </div>
-                        <p> {{contacts[0].messages[0].message}} </p>
-                     </div>
-                     <div class="conversazione-sx clearfix">
-                        <div class="modifica">
-                           <i class="fas fa-angle-down"></i>
-                        </div>
-                        <p> {{contacts[0].messages[1].message}} </p>
-                     </div>
-                  </div>
-                  <div class="chat-dx">
-                     <div class="conversazione-dx clearfix">
-                        <div class="modifica">
-                           <i class="fas fa-angle-down"></i>
-                        </div>
-                        <!-- <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p>
-                        <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p>
-                        <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p> -->
-                        <p>Oggi non ho avuto tempo, perchè Vue mi sta facendo sclerare!!!</p>
-                     </div>
-                     <div class="conversazione-dx clearfix">
-                        <div class="modifica">
-                           <i class="fas fa-angle-down"></i>
-                        </div>
-                        <!-- <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p>
-                        <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p>
-                        <p>Tutto bene... <br> ci vediamo per una partita a calceto? è tanto che non perdi contro di me?</p> -->
-                        <p>Stai sereno con# </p>
-                     </div>
+                  <div v-for="(sms, index) in contacts[utenteAttivoAttuale].messages"> 
+                     <div :class="(sms.status == 'sent') ? 'sent' : 'received'">
+                        <span> {{sms.message}} </span>
+                        <p class="data-sms"> {{sms.date}} </p>
+                     </div>                      
                   </div>
                </div>
                <div class="footer">

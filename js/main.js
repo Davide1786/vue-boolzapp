@@ -14,6 +14,7 @@ const app = new Vue ({
             message: 'Hai portato a spasso il cane?',
             status: 'sent'
          },
+         
          {
             date: '10/01/2020 15:50:00',
             message: 'Ricordati di dargli da mangiare',
@@ -87,9 +88,16 @@ const app = new Vue ({
          }
          ],
       },
-     ]
+     ],
+     utenteAttivoAttuale: 0,
+   },
+   methods: {
+      setUtenteCorrente(i){
+         this.utenteAttivoAttuale = i;     
+      }
    }
 })
+
 
 
 

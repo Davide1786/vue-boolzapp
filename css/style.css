@@ -37,7 +37,7 @@ body {
    height: 100%;
 }
 
-.contatti {
+.lista-contatti {
    width: 100%;
    height: 79%;
    background-position: center;
@@ -45,7 +45,7 @@ body {
    background-color: white;
 }
 
-.lista {
+.contatti {
    width: 100%;
    height: 11%;
    border-bottom: 0.5px rgb(237, 237, 237) solid;
@@ -258,34 +258,41 @@ body {
    overflow-y: scroll;
 }
 
-.chat-sx {
-   max-width: 50%;
-}
-
-.chat-dx {
-   margin-left: 50%;
-   max-width: 50%;
-}
-
-.conversazione-sx {
+.received {
+   width: 30%;
+   float: right;
+   clear: both;
    border-radius: 0px 10px 10px 10px;
-   margin: 0 75px;
+   border-radius: 10px 0px 10px 10px;
+   margin: 0 70px;
    margin-top: 20px;
    border-left: -30px;
-   padding: 20px;
+   padding: 10px;
    background-color: #DCF8C6;
    position: relative;
 }
 
-.conversazione-dx {
+.sent {
+   width: 30%;
+   float: left;
+   clear: both;
    border-radius: 10px 0px 10px 10px;
-   margin: 0 75px;
+   border-radius: 0px 10px 10px 10px;
+   margin: 0 70px;
    margin-top: 20px;
    border-left: -30px;
-   padding: 20px;
+   padding: 10px;
    background-color: white;
    position: relative;
 }
+
+.data-sms {
+   font-size: 10px;
+   color: #cbcbcb; 
+   text-align: right;
+   margin-top: 5px;
+}
+
 
 .modifica {
    position: absolute;
