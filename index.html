@@ -47,11 +47,14 @@
                   <input class="cerca-persone" type="text" placeholder="Cerca o inzia una nuova chat">
                </div>
                <div class="lista-contatti">
-                  <div v-for="(contact, i) in contacts" @click="setUtenteCorrente(i)" class="contatti">
+                  <div v-for="(contact, i) in contacts" @click="setUtenteCorrente(i)" class="contatti" v-on:click="bloccaColore">
                      <div class="avatar" >
                         <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> 
                      </div>
-                     <span class="nomi"> {{contact.name}} </span>
+                     <!-- <p class="nomi"> {{bloccaColore}} </p>  -->
+                     <p class="nomi"> {{contact.name}} </p> 
+                     <p class="ultimo-sms">{{contact.messages.at(-1).message}}</p>
+                     <!-- <div>{{contact.messages[contact.messages.length - 1].message}}</div> -->
                   </div>
                </div>
             </div>
@@ -61,7 +64,11 @@
                      <div class="fotoUtente">
                         <img :src="'img/avatar' + contacts[utenteAttivoAttuale].avatar + '.jpg' " alt="">
                      </div>
-                     <span class="nomeLive">{{ contacts[utenteAttivoAttuale].name  }}</span>
+                     <div class="nameUser">
+                        <span class="nomeLive">{{ contacts[utenteAttivoAttuale].name  }}</span>
+                        <p class="scrive"> {{staScrivendo}} </p>
+                     </div>
+                     
                   </div>
                   <div class="iconePersonali">
                      <i class="fas fa-search"></i>

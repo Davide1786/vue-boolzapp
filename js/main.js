@@ -91,20 +91,37 @@ const app = new Vue ({
      ],
      utenteAttivoAttuale: 0,
      nuovoMessaggio: '',
+     staScrivendo: '',
    },
    methods: {
-      setUtenteCorrente(i){
+      setUtenteCorrente(i)
+      {
          this.utenteAttivoAttuale = i;     
       },
-      inviaNuovoSms(){
-         if(this.nuovoMessaggio != '') {
-            this.contacts[this.utenteAttivoAttuale].messages.push({message: this.nuovoMessaggio, status: 'sent', date: dayjs().format('DD/MM/YY hh:mm:ss')});
+      inviaNuovoSms()
+      {
+         if(this.nuovoMessaggio != '')
+         {
+            this.contacts[this.utenteAttivoAttuale].messages.push(
+               {message: this.nuovoMessaggio, status: 'sent', date: dayjs().format('DD/MM/YY hh:mm:ss')});
             this.nuovoMessaggio = '';
-         }
+            this.staScrivendo = 'Sta scrivendo'
+            setTimeout (() => 
+            {this.contacts[this.utenteAttivoAttuale].messages.push(
+               {message: 'ok', status: 'received', date: dayjs().format('DD/MM/YY hh:mm:ss')});
+            this.staScrivendo = '';
+         },3000) 
+        
+      } 
       }
-   }
-   
+   } 
 })
+
+
+
+
+
+
 
 
 
