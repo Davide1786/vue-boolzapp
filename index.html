@@ -8,6 +8,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+   <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
    <link rel="stylesheet" href="css/style.css" />
 
    <title>Titolo Documento</title>
@@ -81,7 +82,7 @@
                      <i class="far fa-smile"></i>
                   </div>
                   <div class="messaggio">
-                     <input class="sms" type="text" placeholder="Scrivi un messaggio">
+                     <input class="sms" type="text" placeholder="Scrivi un messaggio" v-model="nuovoMessaggio" @keyUp.enter="inviaNuovoSms">
                   </div>
                   <div class="microfono">
                      <i class="fas fa-microphone"></i>

@@ -90,12 +90,20 @@ const app = new Vue ({
       },
      ],
      utenteAttivoAttuale: 0,
+     nuovoMessaggio: '',
    },
    methods: {
       setUtenteCorrente(i){
          this.utenteAttivoAttuale = i;     
+      },
+      inviaNuovoSms(){
+         if(this.nuovoMessaggio != '') {
+            this.contacts[this.utenteAttivoAttuale].messages.push({message: this.nuovoMessaggio, status: 'sent', date: dayjs().format('DD/MM/YY hh:mm:ss')});
+            this.nuovoMessaggio = '';
+         }
       }
    }
+   
 })
 
 

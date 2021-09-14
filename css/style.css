@@ -260,29 +260,29 @@ body {
 
 .received {
    width: 30%;
-   float: right;
-   clear: both;
-   border-radius: 0px 10px 10px 10px;
-   border-radius: 10px 0px 10px 10px;
-   margin: 0 70px;
-   margin-top: 20px;
-   border-left: -30px;
-   padding: 10px;
-   background-color: #DCF8C6;
-   position: relative;
-}
-
-.sent {
-   width: 30%;
    float: left;
    clear: both;
-   border-radius: 10px 0px 10px 10px;
    border-radius: 0px 10px 10px 10px;
+   border-radius: 10px 0px 10px 10px;
    margin: 0 70px;
    margin-top: 20px;
    border-left: -30px;
    padding: 10px;
    background-color: white;
+   position: relative;
+}
+
+.sent {
+   width: 30%;
+   float: right;
+   clear: both;
+   border-radius: 10px 0px 10px 10px;
+   border-radius: 0px 10px 10px 10px;
+   margin: 0 70px;
+   margin-top: 20px;
+   border-left: -30px;
+   padding: 10px;
+   background-color: #DCF8C6;
    position: relative;
 }
 
