@@ -119,7 +119,7 @@ const app = new Vue ({
       },
       cerca(){
          this.contacts.forEach((element) => {
-            if(element.name.includes(this.cercaLettera)){
+            if(element.name.toLowerCase().includes(this.cercaLettera.toLowerCase())){
                element.visible = true;
                
             }else{

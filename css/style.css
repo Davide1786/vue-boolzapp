@@ -159,11 +159,36 @@ body {
 .fa-chevron-down {
    color: grey;
    font-size:  15px;
-   
 }
 
 .fa-chevron-down:hover {
    opacity: 0.3;
+}
+
+.padre {
+   position: relative;
+}
+
+.figlio {
+   position: absolute;
+   background-color: white;
+   border: 1px solid lightgray;
+   right: -90px;
+   top: 30px;
+   z-index: 9999;
+   display: none;
+}
+
+.info {
+   padding: 10px;
+}
+
+.info:hover{
+   background-color: rgb(240, 240, 240);
+}
+
+.figlio:hover {
+   display: block;
 }
 
 .hidden {
@@ -300,16 +325,15 @@ body {
    height: 84%;
    background-image: url(../img/mine.jpg);
    background-position: center;
-   overflow-y: scroll;
+   overflow-y:auto;
 }
 
 .received {
-   width: 30%;
+   width: 25%;
    float: left;
    clear: both;
    border-radius: 0px 10px 10px 10px;
-   border-radius: 10px 0px 10px 10px;
-   margin: 0 70px;
+   margin: 0 100px;
    margin-top: 20px;
    border-left: -30px;
    padding: 10px;
@@ -318,12 +342,11 @@ body {
 }
 
 .sent {
-   width: 30%;
+   width: 25%;
    float: right;
    clear: both;
    border-radius: 10px 0px 10px 10px;
-   border-radius: 0px 10px 10px 10px;
-   margin: 0 70px;
+   margin: 0 100px;
    margin-top: 20px;
    border-left: -30px;
    padding: 10px;

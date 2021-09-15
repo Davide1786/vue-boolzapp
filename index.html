@@ -78,10 +78,14 @@
                </div>
                <div class="sfondo">
                   <div v-for="(sms, index) in contacts[utenteAttivoAttuale].messages"> 
-                     <div :class="(sms.status == 'sent') ? 'sent' : 'received'">
+                     <div :class="(sms.status == 'sent') ? 'sent' : 'received'" class="padre">
                         <p class="spunta"> {{sms.message}}  <i class="fas fa-chevron-down"></i></p>
-                        <!-- <i class="fas fa-chevron-down"></i> -->
                         <p class="data-sms"> {{sms.date}} </p>
+                        <div class="figlio">
+                           <p class="info">Info Messaggio</p>
+                           <p class="info">Rispondi</p>
+                           <p class="info">Elimina Messaggio</p>
+                        </div>
                      </div>                      
                   </div>
                </div>
