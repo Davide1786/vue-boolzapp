@@ -151,6 +151,25 @@ body {
    opacity: 35%;
 }
 
+.spunta {
+   display: flex;
+   justify-content: space-between;
+}
+
+.fa-chevron-down {
+   color: grey;
+   font-size:  15px;
+   
+}
+
+.fa-chevron-down:hover {
+   opacity: 0.3;
+}
+
+.hidden {
+   display: none;
+}
+
 .notifiche {
    align-items: center;
    width: 100%;

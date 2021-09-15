@@ -44,10 +44,10 @@
                   <div class="search">
                      <i class="fab fa-sistrix"></i>
                   </div>
-                  <input class="cerca-persone" type="text" placeholder="Cerca o inzia una nuova chat">
+                  <input class="cerca-persone" type="text" placeholder="Cerca o inzia una nuova chat" v-model="cercaLettera" @keyUp="cerca">
                </div>
                <div class="lista-contatti">
-                  <div v-for="(contact, i) in contacts" @click="setUtenteCorrente(i)" class="contatti" v-on:click="bloccaColore">
+                  <div v-for="(contact, i) in contacts" @click="setUtenteCorrente(i)" :class="(contact.visible) ? 'contatti' : 'hidden'" >
                      <div class="avatar" >
                         <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> 
                      </div>
@@ -79,7 +79,8 @@
                <div class="sfondo">
                   <div v-for="(sms, index) in contacts[utenteAttivoAttuale].messages"> 
                      <div :class="(sms.status == 'sent') ? 'sent' : 'received'">
-                        <span> {{sms.message}} </span>
+                        <p class="spunta"> {{sms.message}}  <i class="fas fa-chevron-down"></i></p>
+                        <!-- <i class="fas fa-chevron-down"></i> -->
                         <p class="data-sms"> {{sms.date}} </p>
                      </div>                      
                   </div>

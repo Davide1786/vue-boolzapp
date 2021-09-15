@@ -92,32 +92,44 @@ const app = new Vue ({
      utenteAttivoAttuale: 0,
      nuovoMessaggio: '',
      staScrivendo: '',
+     cercaLettera: '',
    },
    methods: {
       setUtenteCorrente(i)
       {
-         this.utenteAttivoAttuale = i;     
+         this.utenteAttivoAttuale = i;   
       },
       inviaNuovoSms()
       {
+         let nuovoContatore = this.utenteAttivoAttuale;
          if(this.nuovoMessaggio != '')
          {
             this.contacts[this.utenteAttivoAttuale].messages.push(
                {message: this.nuovoMessaggio, status: 'sent', date: dayjs().format('DD/MM/YY hh:mm:ss')});
             this.nuovoMessaggio = '';
+            // this.staScrivendo[this.utenteAttivoAttuale] = 'Sta scrivendo'
             this.staScrivendo = 'Sta scrivendo'
             setTimeout (() => 
-            {this.contacts[this.utenteAttivoAttuale].messages.push(
+            {this.contacts[nuovoContatore].messages.push(
                {message: 'ok', status: 'received', date: dayjs().format('DD/MM/YY hh:mm:ss')});
             this.staScrivendo = '';
-         },3000) 
-        
+         },3000)  
       } 
+      
+      },
+      cerca(){
+         this.contacts.forEach((element) => {
+            if(element.name.includes(this.cercaLettera)){
+               element.visible = true;
+               
+            }else{
+               element.visible = false;
+            }
+            console.log(element.visible); // i 4 nomi 
+         });    
       }
    } 
 })
-
-
 
 
 
